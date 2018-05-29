@@ -186,7 +186,8 @@ func (b *kubeAuthBackend) parseAndValidateJWT(jwtStr string, role *roleStorageEn
 
 			// verify the service account name is allowed
 			if len(role.ServiceAccountNames) > 1 || role.ServiceAccountNames[0] != "*" {
-				if !strutil.StrListContains(role.ServiceAccountNames, sa.Name) {
+				// iterate over each SA and check if the regex matches the SA name provided
+				if !strutil.StrListContainsRegex(role.ServiceAccountNames, sa.Name) {
 					return errors.New("service account name not authorized")
 				}
 			}
