@@ -207,7 +207,7 @@
     "physical/inmem",
     "version"
   ]
-  revision = "ac52e397fa732786600f02c139e64b87169cb368"
+  revision = "055e05964411de795c8bb9d0c17244132eebda00"
   source = "github.com/krish7919/vault"
 
 [[projects]]
@@ -257,10 +257,10 @@
   version = "v0.1"
 
 [[projects]]
-  branch = "master"
   name = "github.com/sethgrid/pester"
   packages = ["."]
-  revision = "ed9870dad3170c0b25ab9b11830cc57c3a7798fb"
+  revision = "03e26c9abbbf5accb8349790bf9f41bde09d72c3"
+  version = "1.0.0"
 
 [[projects]]
   name = "github.com/spf13/pflag"
@@ -403,6 +403,6 @@
 [solve-meta]
   analyzer-name = "dep"
   analyzer-version = 1
-  inputs-digest = "1f2f768a59e8427d3e2a9347a25b22dc218d99b4f0e04db7e237940305bd7a10"
+  inputs-digest = "0b98b3a7103c400f96982edf378fbb4abc1f81efa727be8b94e67c1cd6ffb057"
   solver-name = "gps-cdcl"
   solver-version = 1
