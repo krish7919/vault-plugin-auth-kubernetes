@@ -40,12 +40,6 @@
   version = "v2.6.0"
 
 [[projects]]
-  name = "github.com/fatih/structs"
-  packages = ["."]
-  revision = "a720dfa8df582c51dee1b36feabb906bde1588bd"
-  version = "v1.0"
-
-[[projects]]
   branch = "master"
   name = "github.com/go-openapi/jsonpointer"
   packages = ["."]
@@ -146,6 +140,12 @@
 
 [[projects]]
   branch = "master"
+  name = "github.com/hashicorp/go-sockaddr"
+  packages = ["."]
+  revision = "6d291a969b86c4b633730bfc6b8b9d64c3aafed9"
+
+[[projects]]
+  branch = "master"
   name = "github.com/hashicorp/go-uuid"
   packages = ["."]
   revision = "27454136f0364f2d44b1276c552d69105cf8c498"
@@ -182,7 +182,6 @@
   revision = "061bf373e402ebb186988085a71ac748949594a9"
 
 [[projects]]
-  branch = "master"
   name = "github.com/hashicorp/vault"
   packages = [
     "api",
@@ -208,7 +207,8 @@
     "physical/inmem",
     "version"
   ]
-  revision = "205c40489422f350b58e3d57b242fe8e6e36134a"
+  revision = "ac52e397fa732786600f02c139e64b87169cb368"
+  source = "github.com/krish7919/vault"
 
 [[projects]]
   branch = "master"
@@ -403,6 +403,6 @@
 [solve-meta]
   analyzer-name = "dep"
   analyzer-version = 1
-  inputs-digest = "a69af5a76c28ebbd0b1a9adcdad48149c12ee59f167992d6581fe9269ccec8f3"
+  inputs-digest = "1f2f768a59e8427d3e2a9347a25b22dc218d99b4f0e04db7e237940305bd7a10"
   solver-name = "gps-cdcl"
   solver-version = 1
