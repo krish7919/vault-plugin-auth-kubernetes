@@ -6,6 +6,7 @@ import (
 	"crypto/rsa"
 	"errors"
 	"fmt"
+	log "github.com/hashicorp/go-hclog"
 
 	"github.com/briankassouf/jose/crypto"
 	"github.com/briankassouf/jose/jws"
@@ -125,7 +126,7 @@ func (b *kubeAuthBackend) pathLogin() framework.OperationFunc {
 					"service_account_name":        serviceAccount.name(),
 					"service_account_namespace":   serviceAccount.namespace(),
 					"service_account_secret_name": serviceAccount.SecretName,
-					"role":                        roleName,
+					"role": roleName,
 				},
 				DisplayName: fmt.Sprintf("%s-%s", serviceAccount.namespace(), serviceAccount.name()),
 				LeaseOptions: logical.LeaseOptions{
@@ -198,9 +199,10 @@ func (b *kubeAuthBackend) parseAndValidateJWT(jwtStr string, role *roleStorageEn
 				}
 			}
 
+			log.Default().Info(fmt.Sprintf("using wildcard to match service account"))
 			// verify the service account name is allowed
 			if len(role.ServiceAccountNames) > 1 || role.ServiceAccountNames[0] != "*" {
-				if !strutil.StrListContains(role.ServiceAccountNames, sa.name()) {
+				if !strutil.StrListContainsWildcard(role.ServiceAccountNames, sa.Name) {
 					return errors.New("service account name not authorized")
 				}
 			}
