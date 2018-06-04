@@ -51,7 +51,7 @@
 [[constraint]]
   name = "github.com/hashicorp/vault"
   source = "github.com/krish7919/vault"
-  revision = "32831d6f009451274e8325381d7b2e64aab7fcbe"
+  revision = "ec1cd0f235f283f6da38ff771ad711b06493be5b"
 
 [[constraint]]
   branch = "master"
